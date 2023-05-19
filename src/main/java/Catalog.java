@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
@@ -9,8 +10,12 @@ public class Catalog implements Iterable<Car> {
         this.cars = new ArrayList<>();
     }
 
-    public void addCar(Car car) {
-        this.cars.add(car);
+    public void addCars(Car... cars) {
+        this.cars.addAll(Arrays.asList(cars));
+    }
+
+    public List<Car> getCars() {
+        return this.cars;
     }
 
     @Override
